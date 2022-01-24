@@ -1,0 +1,6 @@
+*.dylib filter=lfs diff=lfs merge=lfs -text
+First[[:space:]]Multiplayer[[:space:]]Game/Build/macOS.app/Contents/Frameworks/UnityPlayer.dylib.dylib filter=lfs diff=lfs merge=lfs -text
+First[[:space:]]Multiplayer[[:space:]]Game/Build/macOS.app/Contents/Frameworks/UnityPlayer.dylib filter=lfs diff=lfs merge=lfs -text
+First filter=lfs diff=lfs merge=lfs -text
+Multiplayer filter=lfs diff=lfs merge=lfs -text
+Game/Build/macOS.app/Contents/Frameworks/UnityPlayer.dylib filter=lfs diff=lfs merge=lfs -text

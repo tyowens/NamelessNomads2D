@@ -936,5 +936,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Launcher.unity
   - Assets/Scenes/GameLevel.unity
-  playerPath: C:/develop/NamelessNomads/First Multiplayer Game/Build/First Multiplayer
-    Game.exe
+  playerPath: C:/develop/NamelessNomads/First Multiplayer Game/Build/Windows x86/First
+    Multiplayer Game.exe
