@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     #region Public Fields
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
-
-    public GameObject NameTag;
     #endregion
 
 
@@ -15,12 +13,17 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     private float spriteColorRed;
     private float spriteColorGreen;
     private float spriteColorBlue;
+    private Rigidbody2D rb;
+    private Vector2 velocity;
     #endregion
 
 
     #region Private Serializable Fields
     [SerializeField]
     private float speed;
+
+    [SerializeField]
+    private GameObject boxPrefab;
     #endregion
 
 
@@ -28,6 +31,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
     // Use this for initialization
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,6 +46,11 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
         }
 
         ProcessPlayerInput();
+    }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + velocity * speed * Time.deltaTime);
     }
 
     void Awake()
@@ -87,15 +96,19 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
-        Vector3 tempVect = new Vector3(h, v, 0);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-
-        this.gameObject.transform.position += tempVect;
+        Vector2 tempVect = new Vector2(h, v);
+        velocity = tempVect.normalized * speed * Time.deltaTime;
 
         // Color Changing
         if (Input.GetKeyUp("g"))
         {
             PickRandomSpriteColor();
+        }
+
+        // Spawn Ball
+        if (Input.GetKeyUp("b"))
+        {
+            PhotonNetwork.Instantiate(this.boxPrefab.name, new Vector3(5f, 0f, 0f), Quaternion.identity, 0);
         }
     }
 
