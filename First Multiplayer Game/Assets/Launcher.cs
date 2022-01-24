@@ -90,6 +90,7 @@ namespace Com.MyCompany.MyGame
         }
         #endregion
 
+
         #region MonoBehaviourPunCallbacks Callbacks
         public override void OnConnectedToMaster()
         {
