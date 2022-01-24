@@ -1,17 +1,20 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviourPun
+public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region Public Fields
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
+
+    public GameObject NameTag;
     #endregion
 
 
     #region Private Fields
-    private float xPos;
-    private float yPos;
+    private float spriteColorRed;
+    private float spriteColorGreen;
+    private float spriteColorBlue;
     #endregion
 
 
@@ -30,13 +33,15 @@ public class PlayerMovement : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(spriteColorRed, spriteColorGreen, spriteColorBlue);
+
         // If the Player Prefab belongs to another user, then do not make modifications to its location
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             return;
         }
 
-        UpdatePlayerPosition();
+        ProcessPlayerInput();
     }
 
     void Awake()
@@ -54,9 +59,31 @@ public class PlayerMovement : MonoBehaviourPun
     #endregion
 
 
-    #region Public Methods
-    void UpdatePlayerPosition()
+    #region IPunObservable implementation
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+        if (stream.IsWriting)
+        {
+            // We own this player: send the others our data
+            stream.SendNext(spriteColorRed);
+            stream.SendNext(spriteColorGreen);
+            stream.SendNext(spriteColorBlue);
+        }
+        else
+        {
+            // Network player, receive data
+            this.spriteColorRed = (float)stream.ReceiveNext();
+            this.spriteColorGreen = (float)stream.ReceiveNext();
+            this.spriteColorBlue = (float)stream.ReceiveNext();
+        }
+    }
+    #endregion
+
+
+    #region Public Methods
+    void ProcessPlayerInput()
+    {
+        // Movement
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -64,6 +91,19 @@ public class PlayerMovement : MonoBehaviourPun
         tempVect = tempVect.normalized * speed * Time.deltaTime;
 
         this.gameObject.transform.position += tempVect;
+
+        // Color Changing
+        if (Input.GetKeyUp("g"))
+        {
+            PickRandomSpriteColor();
+        }
+    }
+
+    public void PickRandomSpriteColor()
+    {
+        this.spriteColorRed = Random.Range(0f, 1f);
+        this.spriteColorGreen = Random.Range(0f, 1f);
+        this.spriteColorBlue = Random.Range(0f, 1f);
     }
     #endregion
 }
