@@ -1,11 +1,14 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
+public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region Public Fields
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
+
+    [HideInInspector]
+    public int playerId;
     #endregion
 
 
@@ -24,6 +27,9 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 
     [SerializeField]
     private GameObject boxPrefab;
+
+    [SerializeField]
+    private GameObject bulletPrefab;
     #endregion
 
 
@@ -108,7 +114,15 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
         // Spawn Ball
         if (Input.GetKeyUp("b"))
         {
-            PhotonNetwork.Instantiate(this.boxPrefab.name, new Vector3(5f, 0f, 0f), Quaternion.identity, 0);
+            PhotonNetwork.Instantiate(this.boxPrefab.name, new Vector3(rb.transform.position.x, rb.transform.position.y, 0f), Quaternion.identity, 0);
+        }
+
+        // Spawn Ball
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject thisBullet = PhotonNetwork.Instantiate(this.bulletPrefab.name, new Vector3(rb.transform.position.x - 3.0f, rb.transform.position.y, 0f), Quaternion.identity, 0);
+            thisBullet.GetComponent<BulletManager>().SetPlayerId(PhotonNetwork.LocalPlayer.ActorNumber);
+            thisBullet.GetComponent<BulletManager>().SetTrajectory(Vector2.left);
         }
     }
 

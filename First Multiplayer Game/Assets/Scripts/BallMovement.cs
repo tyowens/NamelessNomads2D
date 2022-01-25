@@ -13,6 +13,7 @@ public class BallMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         if(gameObject.GetComponent<Transform>().position.x < -9)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 5, ForceMode2D.Impulse);
