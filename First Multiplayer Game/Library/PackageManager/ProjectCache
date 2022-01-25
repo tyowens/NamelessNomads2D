@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637782242527004072
-    m_Hash: 3056417459
+      ticks: 637787188818139880
+    m_Hash: 4117564280
   m_LockFileStatus:
     m_FilePath: C:/develop/NamelessNomads/First Multiplayer Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637782242739203086
-    m_Hash: 1139992927
+      ticks: 637787188818149891
+    m_Hash: 1906922784
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -82,6 +82,7 @@ m_PackageAssets:
         - 3.2.13
         - 3.2.14
         - 3.2.15
+        - 3.2.16
         - 4.0.0
         - 4.0.1
         - 4.1.0
@@ -1101,11 +1102,13 @@ m_PackageAssets:
         - 1.1.29
         - 1.1.30
         - 2.0.1-pre.12
+        - 2.0.1-pre.18
         compatible:
         - 1.1.27
         - 1.1.29
         - 1.1.30
         - 2.0.1-pre.12
+        - 2.0.1-pre.18
         verified: 1.1.30
       dependencies:
       - name: com.unity.ext.nunit
