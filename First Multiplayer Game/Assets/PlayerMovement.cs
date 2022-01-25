@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + velocity * speed * Time.deltaTime);
+        rb.MovePosition(rb.position + velocity * speed * Time.fixedDeltaTime);
     }
 
     void Awake()
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks, IPunObservable
         float v = Input.GetAxisRaw("Vertical");
 
         Vector2 tempVect = new Vector2(h, v);
-        velocity = tempVect.normalized * speed * Time.deltaTime;
+        velocity = tempVect.normalized;
 
         // Color Changing
         if (Input.GetKeyUp("g"))

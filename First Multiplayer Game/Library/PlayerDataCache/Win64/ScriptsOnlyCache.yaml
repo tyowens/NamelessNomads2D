@@ -7,6 +7,8 @@ ScriptsOnlyBuild:
     - Com.MyCompany.MyGame.PlayerNameInputField
     - PlayerMovement
     PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PhotonTransformViewEditor
+    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonRigidbody2DView
