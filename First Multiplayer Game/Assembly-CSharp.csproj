@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Launcher.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\BallMovement.cs" />
+    <Compile Include="Assets\Scripts\BoxManager.cs" />
     <Compile Include="Assets\Scripts\BulletManager.cs" />
   </ItemGroup>
   <ItemGroup>

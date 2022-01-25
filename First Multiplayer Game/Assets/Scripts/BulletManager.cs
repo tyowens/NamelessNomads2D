@@ -44,6 +44,7 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        // Check if hit player
         if(collider.gameObject.TryGetComponent(out PlayerManager playerManager))
         {
             if(playerManager.playerId == playerId)
@@ -51,6 +52,9 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
                 return;
             }
 
+            PhotonNetwork.Destroy(gameObject);
+        }else if(collider.gameObject.TryGetComponent(out BoxManager boxManager))
+        {
             PhotonNetwork.Destroy(gameObject);
         }
     }

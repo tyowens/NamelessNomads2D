@@ -120,9 +120,15 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         // Spawn Ball
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject thisBullet = PhotonNetwork.Instantiate(this.bulletPrefab.name, new Vector3(rb.transform.position.x - 3.0f, rb.transform.position.y, 0f), Quaternion.identity, 0);
+            Vector3 mouseVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
+            GameObject thisBullet = PhotonNetwork.Instantiate(this.bulletPrefab.name, new Vector3(rb.transform.position.x, rb.transform.position.y, 0f), Quaternion.identity, 0);
             thisBullet.GetComponent<BulletManager>().SetPlayerId(PhotonNetwork.LocalPlayer.ActorNumber);
-            thisBullet.GetComponent<BulletManager>().SetTrajectory(Vector2.left);
+
+            mouseVector.z = 0;
+            Debug.Log(rb.transform.position.ToString());
+            Vector2 vectorToMouse = (mouseVector - rb.transform.position).normalized;
+            thisBullet.GetComponent<BulletManager>().SetTrajectory(vectorToMouse);
         }
     }
 
