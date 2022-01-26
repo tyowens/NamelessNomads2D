@@ -89,7 +89,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(spriteColorRed);
             stream.SendNext(spriteColorGreen);
             stream.SendNext(spriteColorBlue);
-            stream.SendNext(health);
         }
         else
         {
@@ -97,7 +96,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             this.spriteColorRed = (float)stream.ReceiveNext();
             this.spriteColorGreen = (float)stream.ReceiveNext();
             this.spriteColorBlue = (float)stream.ReceiveNext();
-            this.health = (int)stream.ReceiveNext();
         }
     }
     #endregion
@@ -147,19 +145,10 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         this.spriteColorBlue = Random.Range(0f, 1f);
     }
 
-    public void TakeDamage(int damageAmount, GameObject damageDealer)
+    [PunRPC]
+    public void TakeDamage(int damageAmount)
     {
-        if (photonView.IsMine)
-        {
-            Debug.Log("Player is mine and dealing damage to them.");
-            health -= damageAmount;
-
-            if(damageDealer.TryGetComponent(out BulletManager bulletManager))
-            {
-                Debug.Log("Damage dealer is a bullet. Telling bullet to delete itself.");
-                bulletManager.DestroyBullet();
-            }
-        }
+        health -= damageAmount;
     }
 
     public void CheckForPlayerDeath()
