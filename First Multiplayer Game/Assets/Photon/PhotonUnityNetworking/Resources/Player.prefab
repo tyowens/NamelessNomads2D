@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
+  health: 100
   speed: 10
   boxPrefab: {fileID: 3609613372165974663, guid: ce622e861100a7a4cb4ea119f283cfc7, type: 3}
   bulletPrefab: {fileID: 1248800610680605832, guid: 28257ab885f2d9340b2195efab4e21b8, type: 3}

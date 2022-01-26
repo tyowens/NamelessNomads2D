@@ -6,15 +6,17 @@ using UnityEngine;
 public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region Private Fields
-    // Actor number of player who shot this bullet
-    private int playerId;
-
     private Vector2 trajectory;
     #endregion
 
     #region Private Serializable Fields
     [SerializeField]
     private int speed;
+    #endregion
+
+    #region Public Fields
+    // Actor number of player who shot this bullet
+    public int playerId;
     #endregion
 
     #region Public Methods
@@ -27,13 +29,17 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         this.playerId = id;
     }
+
+    public void DestroyBullet()
+    {
+        Debug.Log("Entering DestroyBullet()");
+    }
     #endregion
 
     #region MonoBehavior Methods
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -52,8 +58,10 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
                 return;
             }
 
-            PhotonNetwork.Destroy(gameObject);
-        }else if(collider.gameObject.TryGetComponent(out BoxManager boxManager))
+            Debug.Log("Telling Player to take damage.");
+            playerManager.TakeDamage(10, gameObject);
+        }
+        else if(collider.gameObject.TryGetComponent(out BoxManager boxManager))
         {
             PhotonNetwork.Destroy(gameObject);
         }
@@ -63,7 +71,6 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
     #region MonoBehavior PUN Callbacks
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-
     }
     #endregion
 }

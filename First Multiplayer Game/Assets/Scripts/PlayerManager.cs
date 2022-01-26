@@ -16,8 +16,12 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     private float spriteColorRed;
     private float spriteColorGreen;
     private float spriteColorBlue;
+
     private Rigidbody2D rb;
     private Vector2 velocity;
+
+    [SerializeField]
+    private int health = 100;
     #endregion
 
 
@@ -43,6 +47,8 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     // Update is called once per frame
     void Update()
     {
+        CheckForPlayerDeath();
+
         this.gameObject.GetComponent<SpriteRenderer>().color = new Color(spriteColorRed, spriteColorGreen, spriteColorBlue);
 
         // If the Player Prefab belongs to another user, then do not make modifications to its location
@@ -83,6 +89,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(spriteColorRed);
             stream.SendNext(spriteColorGreen);
             stream.SendNext(spriteColorBlue);
+            stream.SendNext(health);
         }
         else
         {
@@ -90,6 +97,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             this.spriteColorRed = (float)stream.ReceiveNext();
             this.spriteColorGreen = (float)stream.ReceiveNext();
             this.spriteColorBlue = (float)stream.ReceiveNext();
+            this.health = (int)stream.ReceiveNext();
         }
     }
     #endregion
@@ -137,6 +145,29 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         this.spriteColorRed = Random.Range(0f, 1f);
         this.spriteColorGreen = Random.Range(0f, 1f);
         this.spriteColorBlue = Random.Range(0f, 1f);
+    }
+
+    public void TakeDamage(int damageAmount, GameObject damageDealer)
+    {
+        if (photonView.IsMine)
+        {
+            Debug.Log("Player is mine and dealing damage to them.");
+            health -= damageAmount;
+
+            if(damageDealer.TryGetComponent(out BulletManager bulletManager))
+            {
+                Debug.Log("Damage dealer is a bullet. Telling bullet to delete itself.");
+                bulletManager.DestroyBullet();
+            }
+        }
+    }
+
+    public void CheckForPlayerDeath()
+    {
+        if (health <= 0 && gameObject.GetComponent<PhotonView>().IsMine)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
     }
     #endregion
 }

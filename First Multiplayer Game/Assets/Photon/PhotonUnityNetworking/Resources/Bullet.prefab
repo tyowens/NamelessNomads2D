@@ -139,6 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  playerId: 0
+  readyForDestruction: 0
 --- !u!114 &5167561975841708192
 MonoBehaviour:
   m_ObjectHideFlags: 0
