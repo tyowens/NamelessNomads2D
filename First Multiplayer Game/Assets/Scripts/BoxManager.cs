@@ -1,9 +1,15 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BoxManager : MonoBehaviour
 {
+    #region Private Fields
+    public int health = 40;
+    #endregion
+
+    #region MonoBehavior Methods
     // Start is called before the first frame update
     void Start()
     {
@@ -13,22 +19,42 @@ public class BoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckDestruction();
+
+        // Color Updates
+        Color boxColor;
+        if(health <= 10)
+        {
+            boxColor = Color.black;
+        }
+        else if(health <= 30)
+        {
+            boxColor = Color.grey;
+        }
+        else
+        {
+            boxColor = Color.white;
+        }
+        gameObject.GetComponent<SpriteRenderer>().color = boxColor;
+
+        // Movement Updates
         gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        if(gameObject.GetComponent<Transform>().position.x < -9)
+    }
+    #endregion
+
+    #region Public Methods
+    [PunRPC]
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+    }
+
+    public void CheckDestruction()
+    {
+        if(health <= 0 && gameObject.GetComponent<PhotonView>().IsMine)
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 5, ForceMode2D.Impulse);
-        }
-        if (gameObject.GetComponent<Transform>().position.x > 9)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 5, ForceMode2D.Impulse);
-        }
-        if (gameObject.GetComponent<Transform>().position.y > 5)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 5, ForceMode2D.Impulse);
-        }
-        if (gameObject.GetComponent<Transform>().position.y < -5)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
+    #endregion
 }

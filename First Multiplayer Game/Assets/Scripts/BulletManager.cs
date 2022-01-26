@@ -58,7 +58,6 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
                 return;
             }
 
-            Debug.Log("Telling Player to take damage.");
             collider.transform.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 10);
 
             if (photonView.IsMine)
@@ -68,7 +67,12 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
         }
         else if(collider.gameObject.TryGetComponent(out BoxManager boxManager))
         {
-            PhotonNetwork.Destroy(gameObject);
+            collider.transform.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, 10);
+
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
     #endregion
