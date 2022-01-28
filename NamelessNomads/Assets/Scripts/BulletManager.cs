@@ -7,6 +7,9 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     #region Private Fields
     private Vector2 trajectory;
+
+    [SerializeField]
+    private float rangeRemaining;
     #endregion
 
     #region Private Serializable Fields
@@ -46,6 +49,11 @@ public class BulletManager : MonoBehaviourPunCallbacks, IPunObservable
     void Update()
     {
         gameObject.transform.position += (Vector3)(trajectory * speed * Time.deltaTime);
+        rangeRemaining -= 1 * Time.deltaTime;
+        if(rangeRemaining <= 0)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
