@@ -13,10 +13,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 
 
     #region Private Fields
-    private float spriteColorRed;
-    private float spriteColorGreen;
-    private float spriteColorBlue;
-
     private Rigidbody2D rb;
     private Vector2 velocity;
 
@@ -48,8 +44,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     void Update()
     {
         CheckForPlayerDeath();
-
-        this.gameObject.GetComponent<SpriteRenderer>().color = new Color(spriteColorRed, spriteColorGreen, spriteColorBlue);
 
         // If the Player Prefab belongs to another user, then do not make modifications to its location
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
@@ -85,17 +79,9 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (stream.IsWriting)
         {
-            // We own this player: send the others our data
-            stream.SendNext(spriteColorRed);
-            stream.SendNext(spriteColorGreen);
-            stream.SendNext(spriteColorBlue);
         }
         else
         {
-            // Network player, receive data
-            this.spriteColorRed = (float)stream.ReceiveNext();
-            this.spriteColorGreen = (float)stream.ReceiveNext();
-            this.spriteColorBlue = (float)stream.ReceiveNext();
         }
     }
     #endregion
@@ -110,12 +96,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
 
         Vector2 tempVect = new Vector2(h, v);
         velocity = tempVect.normalized;
-
-        // Color Changing
-        if (Input.GetKeyUp("g"))
-        {
-            PickRandomSpriteColor();
-        }
 
         // Spawn Ball
         if (Input.GetKeyUp("b"))
@@ -136,13 +116,6 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             Vector2 vectorToMouse = (mouseVector - rb.transform.position).normalized;
             thisBullet.GetComponent<BulletManager>().SetTrajectory(vectorToMouse);
         }
-    }
-
-    public void PickRandomSpriteColor()
-    {
-        this.spriteColorRed = Random.Range(0f, 1f);
-        this.spriteColorGreen = Random.Range(0f, 1f);
-        this.spriteColorBlue = Random.Range(0f, 1f);
     }
 
     [PunRPC]

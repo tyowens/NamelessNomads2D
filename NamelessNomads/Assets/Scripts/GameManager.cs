@@ -34,7 +34,6 @@ namespace Com.MyCompany.MyGame
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 GameObject thisPlayer = PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
                 thisPlayer.GetComponent<PlayerManager>().playerId = PhotonNetwork.LocalPlayer.ActorNumber;
-                thisPlayer.GetComponent<PlayerManager>().PickRandomSpriteColor();
 
                 if (PhotonNetwork.IsMasterClient)
                 {
