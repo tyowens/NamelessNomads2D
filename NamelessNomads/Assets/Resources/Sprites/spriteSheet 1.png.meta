@@ -4,73 +4,103 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3782343308776512549
-    second: spriteSheet 1_0
+    second: boyIdle1
   - first:
       213: -6473627832824927584
-    second: spriteSheet 1_1
+    second: boyIdle2
   - first:
       213: -1109678485956091968
-    second: spriteSheet 1_2
+    second: boyIdle3
   - first:
       213: -2945734440009596891
-    second: spriteSheet 1_3
+    second: woodenBox
   - first:
       213: 3848660758707264284
-    second: spriteSheet 1_4
+    second: dirtOnGrass_TL
   - first:
       213: -3200037870461876503
-    second: spriteSheet 1_5
+    second: dirtOnGrass_TC
   - first:
       213: -2919298253193678900
-    second: spriteSheet 1_6
+    second: dirtOnGrass_TR
   - first:
       213: 3467627788004686596
-    second: spriteSheet 1_8
+    second: grassOnDirt_TC
   - first:
       213: 2375799618887735248
-    second: spriteSheet 1_9
+    second: grassOnDirt_TR
   - first:
       213: 3701766268662992401
-    second: spriteSheet 1_10
+    second: forest1
   - first:
       213: -5647579575177243015
-    second: spriteSheet 1_11
+    second: dirtOnGrass_ML
   - first:
       213: 5031554201553658612
-    second: spriteSheet 1_12
+    second: dirtOnGrass_MC
   - first:
       213: -3575835064476372741
-    second: spriteSheet 1_13
+    second: dirtOnGrass_MR
   - first:
       213: -1459504350035097234
-    second: spriteSheet 1_7
+    second: grassOnDirt_TL
   - first:
       213: -6529807833755243292
-    second: spriteSheet 1_14
+    second: grassOnDirt_ML
   - first:
       213: 6301077879721063410
-    second: spriteSheet 1_15
+    second: grassOnDirt_MC
   - first:
       213: 5930558966792957144
-    second: spriteSheet 1_16
+    second: grassOnDirt_MR
   - first:
       213: -6618120286144290089
-    second: spriteSheet 1_17
+    second: black
   - first:
       213: 1278497687141750196
-    second: spriteSheet 1_18
+    second: dirtOnGrass_BL
   - first:
       213: -3722462809017745604
-    second: spriteSheet 1_19
+    second: dirtOnGrass_BC
   - first:
       213: 8877374231191623436
-    second: spriteSheet 1_20
+    second: dirtOnGrass_BR
   - first:
       213: -4442265804277586144
-    second: spriteSheet 1_21
+    second: grassOnDirt_BL
   - first:
       213: -665153429350232958
-    second: spriteSheet 1_22
+    second: grassOnDirt_BC
+  - first:
+      213: 6754746002993662998
+    second: grassOnDirt_BR
+  - first:
+      213: -3237973676262972753
+    second: house_TL
+  - first:
+      213: -8884624059673092909
+    second: house_TC
+  - first:
+      213: -1141063925639494409
+    second: house_TR
+  - first:
+      213: 4467381148041393901
+    second: house_BL
+  - first:
+      213: 2845373003792757610
+    second: house_BC
+  - first:
+      213: -6379476082203364789
+    second: house_BR
+  - first:
+      213: 946819733046392038
+    second: house_ML
+  - first:
+      213: 4379240523352992380
+    second: house_MC
+  - first:
+      213: -7473612611715474820
+    second: house_MR
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -184,7 +214,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheet 1_0
+      name: boyIdle1
       rect:
         serializedVersion: 2
         x: 0
@@ -192,7 +222,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,7 +235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_1
+      name: boyIdle2
       rect:
         serializedVersion: 2
         x: 32
@@ -213,7 +243,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,7 +256,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_2
+      name: boyIdle3
       rect:
         serializedVersion: 2
         x: 64
@@ -234,7 +264,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,7 +277,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_3
+      name: woodenBox
       rect:
         serializedVersion: 2
         x: 96
@@ -255,7 +285,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,7 +298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_4
+      name: dirtOnGrass_TL
       rect:
         serializedVersion: 2
         x: 128
@@ -276,7 +306,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -289,7 +319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_5
+      name: dirtOnGrass_TC
       rect:
         serializedVersion: 2
         x: 160
@@ -297,7 +327,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -310,7 +340,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_6
+      name: dirtOnGrass_TR
       rect:
         serializedVersion: 2
         x: 192
@@ -318,7 +348,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -331,7 +361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_8
+      name: grassOnDirt_TC
       rect:
         serializedVersion: 2
         x: 256
@@ -339,7 +369,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -352,7 +382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_9
+      name: grassOnDirt_TR
       rect:
         serializedVersion: 2
         x: 288
@@ -360,7 +390,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -373,15 +403,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_11
+      name: dirtOnGrass_ML
       rect:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -394,15 +424,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_12
+      name: dirtOnGrass_MC
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,15 +445,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_13
+      name: dirtOnGrass_MR
       rect:
         serializedVersion: 2
-        x: 224
+        x: 192
         y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -436,7 +466,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_7
+      name: grassOnDirt_TL
       rect:
         serializedVersion: 2
         x: 224
@@ -444,7 +474,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -457,15 +487,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_14
+      name: grassOnDirt_ML
       rect:
         serializedVersion: 2
-        x: 256
+        x: 224
         y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -478,15 +508,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_15
+      name: grassOnDirt_MC
       rect:
         serializedVersion: 2
-        x: 288
+        x: 256
         y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -499,15 +529,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_16
+      name: grassOnDirt_MR
       rect:
         serializedVersion: 2
-        x: 128
-        y: 224
+        x: 288
+        y: 256
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -520,15 +550,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_17
+      name: black
       rect:
         serializedVersion: 2
-        x: 160
+        x: 96
         y: 224
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -541,15 +571,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_18
+      name: dirtOnGrass_BL
       rect:
         serializedVersion: 2
-        x: 192
+        x: 128
         y: 224
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -562,15 +592,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_19
+      name: dirtOnGrass_BC
       rect:
         serializedVersion: 2
-        x: 224
+        x: 160
         y: 224
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -583,15 +613,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_20
+      name: dirtOnGrass_BR
       rect:
         serializedVersion: 2
-        x: 256
+        x: 192
         y: 224
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -604,15 +634,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_21
+      name: grassOnDirt_BL
       rect:
         serializedVersion: 2
-        x: 288
+        x: 224
         y: 224
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -625,11 +655,200 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet 1_10
+      name: forest1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e4e2dfec05f5330800000000000000
+      internalID: 3701766268662992401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassOnDirt_BC
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c427aea76e4c6f0800000000000000
+      internalID: -665153429350232958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grassOnDirt_BR
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c4d6893bdadbd50800000000000000
+      internalID: 6754746002993662998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_TL
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2a742d8186013d0800000000000000
+      internalID: -3237973676262972753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_TC
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcdb409d7973b480800000000000000
+      internalID: -8884624059673092909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_TR
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4ce3eb7602a20f0800000000000000
+      internalID: -1141063925639494409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_BL
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6b8452c735ffd30800000000000000
+      internalID: 4467381148041393901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_BC
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63bd88ebabcc7720800000000000000
+      internalID: 2845373003792757610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_BR
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42fa2b9d4c8777a0800000000000000
+      internalID: -6379476082203364789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_ML
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -639,8 +858,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e4e2dfec05f5330800000000000000
-      internalID: 3701766268662992401
+      spriteID: 6e47f8ed787c32d00800000000000000
+      internalID: 946819733046392038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_MC
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a6374cd0036cc30800000000000000
+      internalID: 4379240523352992380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_MR
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ad1d13de4684890800000000000000
+      internalID: -7473612611715474820
       vertices: []
       indices: 
       edges: []
